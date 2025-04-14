@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer';
-import { jobDetailsScrapper } from './detailsscrapper';
 
 export async function scrapeJobs(url: string) {
   const browser = await puppeteer.launch({
@@ -53,11 +52,6 @@ export async function scrapeJobs(url: string) {
 
   console.log(`✅ Found ${jobs.length} valid jobs`);
   console.log(jobs);
-
-
-  if(typeof jobs !== 'undefined' && jobs.length > 0 && jobs[0] !== null && typeof jobs[0].url === 'string') {
-    const data = jobs[0].url.split('?')[0].slice(-10)
-  }
 
   await browser.close();
 }
