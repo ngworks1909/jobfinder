@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx prisma generate && npx tsc",
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts",
-    "postinstall": "npx prisma generate"
+    "build": "npx prisma generate && npx tsc -b",
+    "dev": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +19,7 @@
     "puppeteer": "^24.6.1"
   },
   "devDependencies": {
-    "prisma": "^6.8.2"
+    "prisma": "^6.8.2",
+    "ts-node": "^10.0.0"
   }
 }
