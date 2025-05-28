@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scrapeJobs = scrapeJobs;
+exports.scrapeJobs = void 0;
 const puppeteer_1 = __importDefault(require("puppeteer"));
 function scrapeJobs(url) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -56,9 +56,7 @@ function scrapeJobs(url) {
         );
         console.log(`✅ Found ${jobs.length} valid jobs`);
         console.log(jobs);
-        if (typeof jobs !== 'undefined' && jobs.length > 0 && jobs[0] !== null && typeof jobs[0].url === 'string') {
-            const data = jobs[0].url.split('?')[0].slice(-10);
-        }
         yield browser.close();
     });
 }
+exports.scrapeJobs = scrapeJobs;
